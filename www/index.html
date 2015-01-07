@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+    </head>
+    <body>
+			
+		
+        
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+
+		<h2>Solve this Equation.</h2>
+<div id="equation" style="font-size:30pt" ></div>
+<button id="chkAnswer" type="button">Check Your Answer</button> 
+
+
+<script type="text/javascript">
+<!--
+	var num1;
+	var num2;
+	var theSum;
+	var yourAnswer
+
+	//declare 2 new variables for random assignment of positve or negative
+	var signNum1;
+	var signNum2;
+
+
+
+	// The Math.random() function generates a number between 0 and 1
+	//  By using the parseInt function you will generate random integers between 0 and whatever number you choose.
+	
+	num1= parseInt(Math.random() * 20);
+	num2= parseInt(Math.random() * 20);
+
+	//this will generate a random integer that will be either 0, 1, or 2
+	signNum1= parseInt(Math.random()* 2);
+	signNum2= parseInt(Math.random()* 2);
+
+
+	//a javacript if statement will determine when to assign a positive sign or negative sign to a number
+
+	if (signNum1==0)
+	{
+		signNum1="-"
+	}else
+	{
+		signNum1="+"
+	}
+
+	if (signNum2==0)
+	{
+		signNum2="-"
+	}else
+	{
+		signNum2="+"
+	}
+
+		theSum = parseInt(signNum1 + num1) + parseInt( signNum2 + num2);
+	
+	 $("#equation").html("(" +  signNum1 + num1 + ") + ("  + signNum2 + num2 + ")= (<input type='number' step='0.01'  id='yourAnswer' style='font-size:20pt;width:40px' />)");
+
+	//Event Handler for button click
+	 $( "#chkAnswer" ).click(function() {
+
+				yourAnswer= $("#yourAnswer").val();
+				if (parseInt(yourAnswer)==theSum)
+				{
+					alert("You are Right!!!!! Try Another One.");
+					newQuestion()
+				}
+				else{
+					alert("Try Again");
+
+				}
+
+	 });
+
+	 function newQuestion()
+	 {
+		// The Math.random() function generates a number between 0 and 1
+	//  By using the parseInt function you will generate random integers between 0 and whatever number you choose.
+	
+	num1= parseInt(Math.random() * 20);
+	num2= parseInt(Math.random() * 20);
+
+	//this will generate a random integer that will be either 0, 1, or 2
+	signNum1= parseInt(Math.random()* 2);
+	signNum2= parseInt(Math.random()* 2);
+
+
+	//a javacript if statement will determine when to assign a positive sign or negative sign to a number
+
+	if (signNum1==0)
+	{
+		signNum1="-"
+	}else
+	{
+		signNum1="+"
+	}
+
+	if (signNum2==0)
+	{
+		signNum2="-"
+	}else
+	{
+		signNum2="+"
+	}
+
+		theSum = parseInt(signNum1 + num1) + parseInt( signNum2 + num2);
+	
+	 $("#equation").html("(" +  signNum1 + num1 + ") + ("  + signNum2 + num2 + ")= (<input type='number' step='0.01'  id='yourAnswer' style='font-size:20pt;width:40px' />)");
+
+	 }
+
+
+
+	
+//-->
+</script>
+    </body>
+</html>
